@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+:root {
+--plant: #70DF00;
+--fire: #FF9900;
+--ice: #6AD2FF:
+--fighting: #E40000;
+--steel: #2A4950;
+--rock: #E1B237;
+--water: #00A0E4;
+--ghost: #5A1E64;
+--electric: #FFE600;
+--dark: #1C1C1C;
+--poison: #AB00AE;
+--flying: #CCDADD;
+--psychic: #FF81F2;
+--normal: #B3B3B3;
+--ground: #965A00;
+--fairy: #FFC2F9;
+--dragon: #00458A;
+--bug: #3BB900;
+--grass: #57921C;
+--kanto: #7DEC0D;
+--johto: #FFF639;
+--hoenn: #00DFD2;
+--sinnoh: #C071FF;
+--teselia: #5498FF;
+--kalos: #FF549C;
+--alola: #FF7D54;
+--galar: #8B54FF;
+}
