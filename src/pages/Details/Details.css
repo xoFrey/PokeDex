@@ -1,9 +1,36 @@
-.container {
+.details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.details-img {
+  z-index: 2;
   background: rgb(255, 225, 198);
   background: linear-gradient(
     90deg,
     rgba(255, 225, 198, 1) 0%,
     rgba(255, 203, 5, 1) 35%
   );
-  
+  margin: 50px;
+  padding: 0 20vw;
+  border-radius: 20px;
+}
+
+.btn-werte {
+  margin: 30px;
+  padding: 4px 15px;
+  color: white;
+  background-color: black;
+  border-radius: 7px;
+  text-decoration: none;
+}
+.titel {
+  font-size: 36px;
+  -webkit-text-stroke-width: 6.3px;
+  -webkit-text-stroke-color: #2c72b8;
+  -webkit-text-fill-color: #ffcd05;
+  letter-spacing: 2px;
+  font-family: roboto;
 }

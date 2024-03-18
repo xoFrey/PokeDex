@@ -1,21 +1,32 @@
 import "./Details.css";
+import { useContext } from "react";
+import { PokeData } from "../../component/Context/Context";
+
 const Details = () => {
+  const { pokemon, setPokemon } = useContext(PokeData);
+  console.log(pokemon.types);
+
   return (
-    <section>
-      <div className="container">
-        <div className="inner-container">
-          <img src="" alt="" />
-        </div>
+    <section className="details">
+      <div className="details-container">
+        <img
+          className="details-img"
+          src={pokemon.sprites.other.dream_world.front_default}
+          alt=""
+        />
       </div>
       <div>
-        <p>#001 Bulbasar</p>
+        <p className="titel">{pokemon.name}</p>
       </div>
       <div>
-        <button className="button">POISON</button>
-        <button className="button">GRASS</button>
+        {pokemon.types.map((item, index) => (
+          <p key={index} className="btn-werte">
+            {item.type.name}
+          </p>
+        ))}
       </div>
       <div>
-        <h3>ATTACKS AND MOVEMENTS</h3>
+        <h3>{}</h3>
       </div>
     </section>
   );
