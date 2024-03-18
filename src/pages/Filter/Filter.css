@@ -1,0 +1,28 @@
+.filter {
+  padding-bottom: 50px;
+}
+.filter h2 {
+  font-family: RobotoBold;
+  text-transform: uppercase;
+  font-size: 30px;
+  color: #ffcb05;
+  -webkit-text-stroke: 2px #2c72b8;
+  text-align: center;
+}
+
+.filter div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter button {
+  width: 120px;
+  margin: 19px;
+  padding: 10px 0;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid black;
+  text-transform: uppercase;
+  /* color: white; */
+}
