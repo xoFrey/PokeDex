@@ -1,0 +1,18 @@
+.poke-card div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.poke-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.render-pokemon img {
+  width: 100px;
+  object-fit: contain;
+}
