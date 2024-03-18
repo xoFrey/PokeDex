@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/Home";
-import Filter from "./pages/Filter";
-import Details from "./pages/Details";
-import Headline from "./component/Headline";
+import Home from "./pages/Home/Home";
+import Filter from "./pages/Filter/Filter";
+import Details from "./pages/Details/Details";
+import Headline from "./component/Headline/Headline";
 
 function App() {
   return (
