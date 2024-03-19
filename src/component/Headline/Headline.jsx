@@ -1,9 +1,16 @@
+import Back from "../Svg/Back";
 import "./Headline.css";
 const Headline = () => {
   return (
-    <section className="logo-img">
-      <img src="/Images/PokemonLogo.png" alt="" />
-    </section>
+    <>
+      <div className="headline">
+        <Back />
+
+        <section className="logo-img">
+          <img src="/Images/PokemonLogo.png" alt="" />
+        </section>
+      </div>
+    </>
   );
 };
 

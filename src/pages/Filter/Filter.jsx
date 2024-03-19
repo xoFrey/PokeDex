@@ -49,7 +49,6 @@ const Filter = () => {
   return (
     <section className="filter">
       <div className="filter-heading">
-        <Back className="back-arrow" />
         <h2>Type</h2>
       </div>
 

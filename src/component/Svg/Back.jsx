@@ -3,6 +3,7 @@ const Back = () => {
   return (
     <Link to="/">
       <svg
+        className="back-arrow"
         width="18"
         height="28"
         viewBox="0 0 18 28"
