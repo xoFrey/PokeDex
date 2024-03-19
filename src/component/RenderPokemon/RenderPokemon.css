@@ -26,7 +26,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(52.41deg, #ffe1c6 4.87%, #ffcb05 94.37%);
+  background: linear-gradient(
+    52.41deg,
+    var(--cardbgfirst) 4.87%,
+    var(--cardbgsecond) 94.37%
+  );
   border-radius: 20px;
   position: relative;
   height: 100px;

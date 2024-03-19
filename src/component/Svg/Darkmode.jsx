@@ -1,10 +1,29 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Darkmode = () => {
+  const [switcher, setSwitcher] = useState(false);
+
+  const colorSwitch = () => {
+    if (switcher === false) {
+      document.documentElement.style.setProperty("--cardbgfirst", "#ffe1c6");
+      document.documentElement.style.setProperty("--cardbgsecond", "#ffcb05");
+      document.documentElement.style.setProperty("--fullbg", "#ccdadd");
+      document.documentElement.style.setProperty("--input", "#ccdadd");
+    } else {
+      document.documentElement.style.setProperty("--cardbgfirst", "#BFDFFF");
+      document.documentElement.style.setProperty("--cardbgsecond", "#001224");
+      document.documentElement.style.setProperty("--fullbg", "#1c1c1c");
+      document.documentElement.style.setProperty("--input", "#1c1c1c");
+    }
+    setSwitcher((switcher) => !switcher);
+    return;
+  };
   return (
     <>
       <Link to="/">
         <svg
+          onClick={colorSwitch}
           width="25"
           height="25"
           viewBox="0 0 25 25"
