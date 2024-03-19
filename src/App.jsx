@@ -10,23 +10,21 @@ import {
   LoadingContent,
   PokeData,
   UserInput,
-  FilteredPokemon,
   ButtonState,
+  PokeFilter,
 } from "./component/Context/Context";
 
 function App() {
   const [pokemon, setPokemon] = useState();
   const [loading, setLoading] = useState(false);
   const [userInput, setUserInput] = useState("");
-  const [filteredPokemon, setFilteredPokemon] = useState([]);
   const [button, setButton] = useState(false);
+  const [pokeFilter, setPokeFilter] = useState("hallo");
 
   return (
     <>
-      <ButtonState.Provider value={{ button, setButton }}>
-        <FilteredPokemon.Provider
-          value={{ filteredPokemon, setFilteredPokemon }}
-        >
+      <PokeFilter.Provider value={{ pokeFilter, setPokeFilter }}>
+        <ButtonState.Provider value={{ button, setButton }}>
           <UserInput.Provider value={{ userInput, setUserInput }}>
             <PokeData.Provider value={{ pokemon, setPokemon }}>
               <LoadingContent.Provider value={{ loading, setLoading }}>
@@ -45,8 +43,8 @@ function App() {
               </LoadingContent.Provider>
             </PokeData.Provider>
           </UserInput.Provider>
-        </FilteredPokemon.Provider>
-      </ButtonState.Provider>
+        </ButtonState.Provider>
+      </PokeFilter.Provider>
     </>
   );
 }

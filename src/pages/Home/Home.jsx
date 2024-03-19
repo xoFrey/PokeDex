@@ -4,16 +4,15 @@ import RenderPokemon from "../../component/RenderPokemon/RenderPokemon";
 import Search from "../../component/Search/Search";
 import {
   ButtonState,
-  FilteredPokemon,
+  PokeFilter,
   UserInput,
 } from "../../component/Context/Context";
 const Home = () => {
   const [pokemonList, setPokemonList] = useState();
   const { userInput, setUserInput } = useContext(UserInput);
+  const { pokeFilter, setPokeFilter } = useContext(PokeFilter);
   const { button, setButton } = useContext(ButtonState);
-  const { filteredPokemon } = useContext(FilteredPokemon);
-  // console.log(userInput);
-  console.log(filteredPokemon);
+
   // ?offset=0&limit=1025
   useEffect(() => {
     fetch("https://pokeapi.co/api/v2/pokemon/")
@@ -24,12 +23,16 @@ const Home = () => {
 
   // fitness app marzio. alle fetchen aber nicht alle rendern
 
+  console.log(button);
+
   return (
     <>
       <Search />
       <section className="home">
         {button ? (
-          <p>gefilterte</p>
+          pokeFilter.map((item) => <RenderPokemon url={item} />)
+        ) : userInput.length > 0 ? (
+          <p>rendered</p>
         ) : (
           pokemonList?.results.map((item, index) => (
             <div key={index}>

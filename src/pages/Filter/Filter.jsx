@@ -1,14 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import "./Filter.css";
-import FilterData from "../../component/FilterData/FilterData";
 import { colors } from "../../assets/data/colors";
-import RenderPokemon from "../../component/RenderPokemon/RenderPokemon";
 import { Link } from "react-router-dom";
-import { ButtonState, FilteredPokemon } from "../../component/Context/Context";
+import { ButtonState, PokeFilter } from "../../component/Context/Context";
+import Search from "../../component/Search/Search";
 
 const Filter = () => {
-  const { filteredPokemon, setFilteredPokemon } = useContext(FilteredPokemon);
   const { button, setButton } = useContext(ButtonState);
+  const { pokeFilter, setPokeFilter } = useContext(PokeFilter);
 
   // State für die Daten aller gefetchten Types:
   const [typeData, setTypeData] = useState();
@@ -40,14 +39,16 @@ const Filter = () => {
   }, [typeURL]);
 
   useEffect(() => {
-    type?.pokemon?.map((item) => urlArray.push(item.pokemon.url));
-    setFilteredPokemon(urlArray);
+    type?.pokemon?.map((item) => {
+      urlArray.push(item.pokemon.url);
+      setPokeFilter(urlArray);
+    });
   }, [type]);
-  console.log("FilteredPokemon:", filteredPokemon);
 
   return (
     <section className="filter">
       <h2>Type</h2>
+      <Search />
       <div>
         {typeData ? (
           typeData.results.map((item, index) => (
@@ -59,7 +60,6 @@ const Filter = () => {
                 {item.name}
               </button>
             </Link>
-            // # --> Ist "Unknown" ein Type oder ein Fehler? Gibt es unknown Pokemon? Ansonsten "Unknown" schon beim Fetchen aussortieren
           ))
         ) : (
           <p>Loading</p>
