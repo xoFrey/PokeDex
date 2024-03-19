@@ -1,10 +1,11 @@
 import "./Details.css";
 import { useContext } from "react";
 import { PokeData } from "../../component/Context/Context";
+import { colors } from "../../assets/data/colors";
 
 const Details = () => {
   const { pokemon, setPokemon } = useContext(PokeData);
-  console.log(pokemon.types);
+  console.log(pokemon);
 
   return (
     <section className="details">
@@ -22,13 +23,20 @@ const Details = () => {
       </div>
       <div className="details-type">
         {pokemon.types.map((item, index) => (
-          <p key={index} className="btn-werte">
+          <p
+            key={index}
+            className="btn-werte"
+            style={{ backgroundColor: colors[item.type.name] }}
+          >
             {item.type.name}
           </p>
         ))}
       </div>
-      <div>
-        <p className="movements">ATTACKS AND MOVEMENTS</p>
+      <p className="movements">ATTACKS AND MOVEMENTS</p>
+      <div className="details-attacks">
+        {pokemon.moves.map((item, index) => (
+          <p key={index}>{item.move.name}</p>
+        ))}
       </div>
     </section>
   );

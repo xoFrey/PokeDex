@@ -20,8 +20,8 @@ const LoadingPage = () => {
   }, []); // <<< arrayklammern userInput rein danke
 
   return (
-    <section>
-      <h2>Loading...</h2>
+    <section className="pokeLoading">
+      <div className="pokeBall"></div>
     </section>
   );
 };
