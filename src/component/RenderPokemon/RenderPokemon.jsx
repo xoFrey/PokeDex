@@ -10,7 +10,7 @@ const RenderPokemon = ({ url }) => {
       .then((res) => res.json())
       .then((data) => setPokemonData(data))
       .catch((err) => console.log("Fetch mit Dynamischer URL ", err));
-  }, []);
+  }, [url]);
 
   return (
     <section className="render-pokemon">

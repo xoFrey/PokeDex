@@ -27,7 +27,6 @@ const Home = () => {
       .catch((err) => console.log("Pokemon List Fetch", err));
   }, []);
 
-
   return (
     <main>
       <Search pokeList={pokemonList} />
