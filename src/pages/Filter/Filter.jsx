@@ -3,8 +3,6 @@ import "./Filter.css";
 import { colors } from "../../assets/data/colors";
 import { Link } from "react-router-dom";
 import { ButtonState, PokeFilter } from "../../component/Context/Context";
-import Search from "../../component/Search/Search";
-import Back from "../../component/Svg/Back";
 
 const Filter = () => {
   const { button, setButton } = useContext(ButtonState);

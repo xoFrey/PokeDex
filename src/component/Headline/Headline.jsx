@@ -1,16 +1,21 @@
-import Back from "../Svg/Back";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ButtonState } from "../Context/Context";
 import "./Headline.css";
 const Headline = () => {
+  const { setButton } = useContext(ButtonState);
   return (
-    <>
-      <div className="headline">
-        <Back />
-
-        <section className="logo-img">
-          <img src="/Images/PokemonLogo.png" alt="" />
-        </section>
-      </div>
-    </>
+    <div className="headline">
+      <section className="logo-img">
+        <Link to="/">
+          <img
+            onClick={() => setButton(false)}
+            src="/Images/PokemonLogo.png"
+            alt=""
+          />{" "}
+        </Link>
+      </section>
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@ import "./Details.css";
 import { useEffect, useState } from "react";
 
 import { colors } from "../../assets/data/colors";
-import Back from "../../component/Svg/Back";
+
 import { useParams } from "react-router-dom";
 
 const Details = () => {
@@ -20,7 +20,6 @@ const Details = () => {
 
   return (
     <section className="details-page">
-      <Back />
       <section className="details">
         <div className="details-container">
           <img

@@ -14,7 +14,6 @@ const Search = ({ pokeList }) => {
     setPokeFilter(filtered);
   }, [userInput]);
 
-  console.log(pokeFilter);
   return (
     <section className="search">
       <Burgermenu />

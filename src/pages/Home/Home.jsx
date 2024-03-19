@@ -26,7 +26,6 @@ const Home = () => {
       .then((data) => setPokemonList(data))
       .catch((err) => console.log("Pokemon List Fetch", err));
   }, []);
-  console.log(pokeFilter);
 
   return (
     <main>
