@@ -5,7 +5,7 @@ import { useContext, useEffect } from "react";
 import { PokeFilter, UserInput } from "../../component/Context/Context";
 const Search = ({ pokeList }) => {
   const { userInput, setUserInput } = useContext(UserInput);
-  const { setPokeFilter } = useContext(PokeFilter);
+  const { pokeFilter, setPokeFilter } = useContext(PokeFilter);
 
   useEffect(() => {
     const filtered = pokeList?.results?.filter((item) =>
@@ -14,6 +14,7 @@ const Search = ({ pokeList }) => {
     setPokeFilter(filtered);
   }, [userInput]);
 
+  console.log(pokeFilter);
   return (
     <section className="search">
       <Burgermenu />

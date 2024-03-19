@@ -4,28 +4,25 @@ import { Link } from "react-router-dom";
 const Darkmode = () => {
   const [switcher, setSwitcher] = useState(false);
 
-  const colorSwitch = () => {
-    if (switcher === false) {
-      document.documentElement.style.setProperty("--cardbgfirst", "#ffe1c6");
-      document.documentElement.style.setProperty("--cardbgsecond", "#ffcb05");
-      document.documentElement.style.setProperty("--fullbg", "#ccdadd");
-      document.documentElement.style.setProperty("--input", "#EBEBEB");
-      document.documentElement.style.setProperty("--placeholder", "#919191");
-    } else {
-      document.documentElement.style.setProperty("--cardbgfirst", "#BFDFFF");
-      document.documentElement.style.setProperty("--cardbgsecond", "#001224");
-      document.documentElement.style.setProperty("--fullbg", "#454545");
-      document.documentElement.style.setProperty("--input", "#919191");
-      document.documentElement.style.setProperty("--placeholder", "white");
-    }
-    setSwitcher((switcher) => !switcher);
-    return;
-  };
+  if (switcher === false) {
+    document.documentElement.style.setProperty("--cardbgfirst", "#ffe1c6");
+    document.documentElement.style.setProperty("--cardbgsecond", "#ffcb05");
+    document.documentElement.style.setProperty("--fullbg", "#ccdadd");
+    document.documentElement.style.setProperty("--input", "#EBEBEB");
+    document.documentElement.style.setProperty("--placeholder", "#919191");
+  } else {
+    document.documentElement.style.setProperty("--cardbgfirst", "#BFDFFF");
+    document.documentElement.style.setProperty("--cardbgsecond", "#001224");
+    document.documentElement.style.setProperty("--fullbg", "#454545");
+    document.documentElement.style.setProperty("--input", "#919191");
+    document.documentElement.style.setProperty("--placeholder", "white");
+  }
+
   return (
     <>
       <Link to="/">
         <svg
-          onClick={colorSwitch}
+          onClick={() => setSwitcher((switcher) => !switcher)}
           width="25"
           height="25"
           viewBox="0 0 25 25"
