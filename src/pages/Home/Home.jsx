@@ -10,8 +10,13 @@ import {
 const Home = () => {
   const [pokemonList, setPokemonList] = useState();
   const { userInput, setUserInput } = useContext(UserInput);
-  const { pokeFilter, setPokeFilter } = useContext(PokeFilter);
+  const { pokeFilter } = useContext(PokeFilter);
   const { button, setButton } = useContext(ButtonState);
+  const [filteredPoke, setFilteredPoke] = useState();
+
+  useEffect(() => {
+    setFilteredPoke(pokeFilter);
+  }, []);
 
   // ?offset=0&limit=1025
   useEffect(() => {
@@ -23,16 +28,18 @@ const Home = () => {
 
   // fitness app marzio. alle fetchen aber nicht alle rendern
 
-  console.log(button);
-
   return (
     <>
       <Search pokeList={pokemonList} />
       <section className="home">
         {button
-          ? pokeFilter.map((item) => <RenderPokemon url={item} />)
+          ? filteredPoke?.map((item, index) => (
+              <RenderPokemon key={index} url={item} />
+            ))
           : userInput.length > 0
-          ? pokeFilter.map((item) => <RenderPokemon url={item.url} />)
+          ? pokeFilter?.map((item, index) => (
+              <RenderPokemon key={index} url={item.url} />
+            ))
           : pokemonList?.results.map((item, index) => (
               <div key={index}>
                 <RenderPokemon url={item.url} />

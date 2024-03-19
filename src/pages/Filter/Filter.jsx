@@ -52,14 +52,15 @@ const Filter = () => {
       <div>
         {typeData ? (
           typeData.results.map((item, index) => (
-            <Link to="/filter" key={index} onClick={() => setButton(true)}>
-              <button
-                onClick={() => setTypeURL(item.url)}
-                style={{ backgroundColor: colors[item.name] }}
-              >
-                {item.name}
-              </button>
-            </Link>
+            <button
+              onClick={() => {
+                setTypeURL(item.url);
+                setButton(true);
+              }}
+              style={{ backgroundColor: colors[item.name] }}
+            >
+              {item.name}
+            </button>
           ))
         ) : (
           <p>Loading</p>
