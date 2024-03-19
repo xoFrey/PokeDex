@@ -4,6 +4,7 @@ import { colors } from "../../assets/data/colors";
 import { Link } from "react-router-dom";
 import { ButtonState, PokeFilter } from "../../component/Context/Context";
 import Search from "../../component/Search/Search";
+import Back from "../../component/Svg/Back";
 
 const Filter = () => {
   const { button, setButton } = useContext(ButtonState);
@@ -47,12 +48,14 @@ const Filter = () => {
 
   return (
     <section className="filter">
+      <Back />
       <h2>Type</h2>
-      <Search />
+
       <div>
         {typeData ? (
           typeData.results.map((item, index) => (
             <button
+              key={index}
               onClick={() => {
                 setTypeURL(item.url);
                 setButton(true);

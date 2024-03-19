@@ -1,5 +1,6 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import "./RenderPokemon.css";
+import { Link } from "react-router-dom";
 
 const RenderPokemon = ({ url }) => {
   const [pokemonData, setPokemonData] = useState();
@@ -13,24 +14,26 @@ const RenderPokemon = ({ url }) => {
 
   return (
     <section className="render-pokemon">
-      {pokemonData ? (
-        <div className="poke-card">
-          <img src={pokemonData?.sprites.other.home.front_default} alt="" />
-          <div>
-            <p>
-              #
-              {pokemonData?.id < 10
-                ? "00" + pokemonData.id
-                : pokemonData.id < 100 && pokemonData.id > 9
-                ? "0" + pokemonData.id
-                : pokemonData.id}
-            </p>
-            <p>{pokemonData?.name}</p>
+      <Link to={`/details/${pokemonData?.id}`}>
+        {pokemonData ? (
+          <div className="poke-card">
+            <img src={pokemonData?.sprites.other.home.front_default} alt="" />
+            <div>
+              <p>
+                #
+                {pokemonData?.id < 10
+                  ? "00" + pokemonData.id
+                  : pokemonData.id < 100 && pokemonData.id > 9
+                  ? "0" + pokemonData.id
+                  : pokemonData.id}
+              </p>
+              <p>{pokemonData?.name}</p>
+            </div>
           </div>
-        </div>
-      ) : (
-        <p>loading....</p>
-      )}
+        ) : (
+          <p>loading....</p>
+        )}
+      </Link>
     </section>
   );
 };
