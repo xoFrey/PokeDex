@@ -26,7 +26,8 @@ img {
   --cardbgfirst: #ffe1c6;
   --cardbgsecond: #ffcb05;
   --fullbg: #ccdadd;
-  --input: #b7b7b7;
+  --input: #919191;
+  --placeholder: #919191;
 }
 
 a {

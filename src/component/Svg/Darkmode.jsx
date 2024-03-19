@@ -9,12 +9,14 @@ const Darkmode = () => {
       document.documentElement.style.setProperty("--cardbgfirst", "#ffe1c6");
       document.documentElement.style.setProperty("--cardbgsecond", "#ffcb05");
       document.documentElement.style.setProperty("--fullbg", "#ccdadd");
-      document.documentElement.style.setProperty("--input", "#ccdadd");
+      document.documentElement.style.setProperty("--input", "#EBEBEB");
+      document.documentElement.style.setProperty("--placeholder", "#919191");
     } else {
       document.documentElement.style.setProperty("--cardbgfirst", "#BFDFFF");
       document.documentElement.style.setProperty("--cardbgsecond", "#001224");
       document.documentElement.style.setProperty("--fullbg", "#1c1c1c");
-      document.documentElement.style.setProperty("--input", "#1c1c1c");
+      document.documentElement.style.setProperty("--input", "#919191");
+      document.documentElement.style.setProperty("--placeholder", "white");
     }
     setSwitcher((switcher) => !switcher);
     return;

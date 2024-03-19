@@ -8,12 +8,13 @@
 
 .search input {
   border-radius: 50px;
-  background-color: #ebebeb;
+  background-color: var(--input);
   border-style: none;
   padding: 10px 10vw;
 }
 .search input::placeholder {
-  color: #909090;
+  color: var(--placeholder);
+  font-size: 14px;
   font-family: roboto;
 }
 
