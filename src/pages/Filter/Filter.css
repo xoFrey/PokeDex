@@ -27,3 +27,7 @@
   text-transform: uppercase;
   color: white;
 }
+
+.filter a {
+  text-decoration: none;
+}

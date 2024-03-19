@@ -11,36 +11,42 @@ import {
   PokeData,
   UserInput,
   FilteredPokemon,
+  ButtonState,
 } from "./component/Context/Context";
 
 function App() {
   const [pokemon, setPokemon] = useState();
   const [loading, setLoading] = useState(false);
   const [userInput, setUserInput] = useState("");
-  const [filteredPokemon, setFilteredPokemon] = useState();
+  const [filteredPokemon, setFilteredPokemon] = useState([]);
+  const [button, setButton] = useState(false);
 
   return (
     <>
-      <FilteredPokemon.Provider value={{ filteredPokemon, setFilteredPokemon }}>
-        <UserInput.Provider value={{ userInput, setUserInput }}>
-          <PokeData.Provider value={{ pokemon, setPokemon }}>
-            <LoadingContent.Provider value={{ loading, setLoading }}>
-              {loading ? (
-                <BrowserRouter>
-                  <Headline />
-                  <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/filter" element={<Filter />} />
-                    <Route path="/details" element={<Details />} />
-                  </Routes>
-                </BrowserRouter>
-              ) : (
-                <LoadingPage />
-              )}
-            </LoadingContent.Provider>
-          </PokeData.Provider>
-        </UserInput.Provider>
-      </FilteredPokemon.Provider>
+      <ButtonState.Provider value={{ button, setButton }}>
+        <FilteredPokemon.Provider
+          value={{ filteredPokemon, setFilteredPokemon }}
+        >
+          <UserInput.Provider value={{ userInput, setUserInput }}>
+            <PokeData.Provider value={{ pokemon, setPokemon }}>
+              <LoadingContent.Provider value={{ loading, setLoading }}>
+                {loading ? (
+                  <BrowserRouter>
+                    <Headline />
+                    <Routes>
+                      <Route path="/" element={<Home />} />
+                      <Route path="/filter" element={<Filter />} />
+                      <Route path="/details" element={<Details />} />
+                    </Routes>
+                  </BrowserRouter>
+                ) : (
+                  <LoadingPage />
+                )}
+              </LoadingContent.Provider>
+            </PokeData.Provider>
+          </UserInput.Provider>
+        </FilteredPokemon.Provider>
+      </ButtonState.Provider>
     </>
   );
 }

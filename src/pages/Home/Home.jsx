@@ -2,11 +2,18 @@ import { useContext, useEffect, useState } from "react";
 import "./Home.css";
 import RenderPokemon from "../../component/RenderPokemon/RenderPokemon";
 import Search from "../../component/Search/Search";
-import { UserInput } from "../../component/Context/Context";
+import {
+  ButtonState,
+  FilteredPokemon,
+  UserInput,
+} from "../../component/Context/Context";
 const Home = () => {
   const [pokemonList, setPokemonList] = useState();
   const { userInput, setUserInput } = useContext(UserInput);
-  console.log(userInput);
+  const { button, setButton } = useContext(ButtonState);
+  const { filteredPokemon } = useContext(FilteredPokemon);
+  // console.log(userInput);
+  console.log(filteredPokemon);
   // ?offset=0&limit=1025
   useEffect(() => {
     fetch("https://pokeapi.co/api/v2/pokemon/")
@@ -21,7 +28,7 @@ const Home = () => {
     <>
       <Search />
       <section className="home">
-        {userInput.length > 0 ? (
+        {button ? (
           <p>gefilterte</p>
         ) : (
           pokemonList?.results.map((item, index) => (
