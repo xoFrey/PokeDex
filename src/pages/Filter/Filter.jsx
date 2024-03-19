@@ -3,8 +3,6 @@ import "./Filter.css";
 import { colors } from "../../assets/data/colors";
 import { Link } from "react-router-dom";
 import { ButtonState, PokeFilter } from "../../component/Context/Context";
-import Search from "../../component/Search/Search";
-import Back from "../../component/Svg/Back";
 
 const Filter = () => {
   const { button, setButton } = useContext(ButtonState);
@@ -29,6 +27,7 @@ const Filter = () => {
       .then((data) => setTypeData(data))
       .catch((err) => console.log("filter data fetch", err));
   }, []);
+  console.log(typeData);
 
   // Fetch der Daten des einzelnen, angeklickten types:
   useEffect(() => {
@@ -55,17 +54,23 @@ const Filter = () => {
       <div className="filter-container">
         {typeData ? (
           typeData.results.map((item, index) => (
-            <button
-              className="type-btn"
-              key={index}
-              onClick={() => {
-                setTypeURL(item.url);
-                setButton(true);
-              }}
-              style={{ backgroundColor: colors[item.name] }}
-            >
-              {item.name}
-            </button>
+            <div>
+              {item.name !== "unknown" ? (
+                <button
+                  className="type-btn"
+                  key={index}
+                  onClick={() => {
+                    setTypeURL(item.url);
+                    setButton(true);
+                  }}
+                  style={{ backgroundColor: colors[item.name] }}
+                >
+                  {item.name}
+                </button>
+              ) : (
+                ""
+              )}
+            </div>
           ))
         ) : (
           <p>Loading</p>
