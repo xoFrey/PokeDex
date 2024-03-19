@@ -5,7 +5,7 @@ import RenderPokemon from "../../component/RenderPokemon/RenderPokemon";
 const Home = () => {
   const { pokemon, setPokemon } = useContext(PokeData);
   const [pokemonList, setPokemonList] = useState();
-
+  // ?offset=0&limit=1025
   useEffect(() => {
     fetch("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1025")
       .then((res) => res.json())
@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <section className="home">
       {pokemonList?.results.map((item, index) => (
-        <div>
+        <div key={index}>
           <RenderPokemon url={item.url} />
         </div>
       ))}

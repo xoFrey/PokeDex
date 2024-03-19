@@ -1,38 +1,32 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import "./RenderPokemon.css";
+import { PokeData } from "../Context/Context";
 
 const RenderPokemon = ({ url }) => {
-  const [test, setTest] = useState();
+  const [pokemonData, setPokemonData] = useState();
 
   useEffect(() => {
     fetch(`${url}`)
       .then((res) => res.json())
-      .then((data) => setTest(data))
+      .then((data) => setPokemonData(data))
       .catch((err) => console.log("Fetch mit Dynamischer URL ", err));
   }, []);
 
   return (
     <section className="render-pokemon">
-      {test ? (
+      {pokemonData ? (
         <div className="poke-card">
-          <img
-            src={
-              test.sprites.other.dream_world.front_default != null
-                ? test.sprites.other.dream_world.front_default
-                : test.sprites.other.home.front_default
-            }
-            alt=""
-          />
+          <img src={pokemonData?.sprites.other.home.front_default} alt="" />
           <div>
             <p>
               #
-              {test.id < 10
-                ? "00" + test.id
-                : test.id < 100 && test.id > 9
-                ? "0" + test.id
-                : test.id}
+              {pokemonData?.id < 10
+                ? "00" + pokemonData.id
+                : pokemonData.id < 100 && pokemonData.id > 9
+                ? "0" + pokemonData.id
+                : pokemonData.id}
             </p>
-            <h3>{test.name}</h3>
+            <p>{pokemonData?.name}</p>
           </div>
         </div>
       ) : (

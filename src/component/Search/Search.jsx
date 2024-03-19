@@ -2,7 +2,12 @@ import "./Search.css";
 const Search = () => {
   return (
     <section>
-      <h2>Search</h2>
+      <input
+        type="text"
+        name="userInput"
+        id="userInput"
+        placeholder="Search Pokemon"
+      />
     </section>
   );
 };

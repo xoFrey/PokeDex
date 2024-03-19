@@ -2,7 +2,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: rgb(255, 255, 255);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  width: 100%;
+  padding: 1vw 4vw;
   gap: 20px;
+  position: absolute;
+  bottom: 0;
+}
+
+.poke-card div p {
+  font-family: roboto;
+  font-size: 14px;
+}
+
+.poke-card div p::first-letter {
+  text-transform: uppercase;
 }
 
 .poke-card {
@@ -10,9 +26,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(52.41deg, #ffe1c6 4.87%, #ffcb05 94.37%);
+  border-radius: 20px;
+  position: relative;
+  height: 100px;
 }
 
 .render-pokemon img {
-  width: 100px;
+  width: 130px;
   object-fit: contain;
+  position: absolute;
+  top: -60px;
 }
