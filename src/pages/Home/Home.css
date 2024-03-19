@@ -3,7 +3,7 @@
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   align-items: end;
   column-gap: 20px;
-  row-gap: 52px;
+  row-gap: 70px;
   padding: 15vw 5vw;
 }
 

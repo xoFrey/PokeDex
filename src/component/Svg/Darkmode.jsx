@@ -14,7 +14,7 @@ const Darkmode = () => {
     } else {
       document.documentElement.style.setProperty("--cardbgfirst", "#BFDFFF");
       document.documentElement.style.setProperty("--cardbgsecond", "#001224");
-      document.documentElement.style.setProperty("--fullbg", "#1c1c1c");
+      document.documentElement.style.setProperty("--fullbg", "#454545");
       document.documentElement.style.setProperty("--input", "#919191");
       document.documentElement.style.setProperty("--placeholder", "white");
     }

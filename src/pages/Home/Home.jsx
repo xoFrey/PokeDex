@@ -13,7 +13,7 @@ const Home = () => {
   const { pokeFilter } = useContext(PokeFilter);
   const { button, setButton } = useContext(ButtonState);
   const [filteredPoke, setFilteredPoke] = useState();
-  const [loadItems, setLoadItems] = useState(20);
+  const [loadItems, setLoadItems] = useState(150);
 
   useEffect(() => {
     setFilteredPoke(pokeFilter);
@@ -27,7 +27,6 @@ const Home = () => {
       .catch((err) => console.log("Pokemon List Fetch", err));
   }, []);
 
-  // fitness app marzio. alle fetchen aber nicht alle rendern
 
   return (
     <main>
@@ -52,7 +51,7 @@ const Home = () => {
         <button className=" btn" onClick={() => setLoadItems(loadItems + 20)}>
           Load More
         </button>
-      </div>{" "}
+      </div>
     </main>
   );
 };

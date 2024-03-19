@@ -17,7 +17,10 @@ const RenderPokemon = ({ url }) => {
       <Link to={`/details/${pokemonData?.id}`}>
         {pokemonData ? (
           <div className="poke-card">
-            <img src={pokemonData?.sprites.other.home.front_default} alt="" />
+            <img
+              src={pokemonData?.sprites.other["official-artwork"].front_default}
+              alt=""
+            />
             <div>
               <p>
                 #

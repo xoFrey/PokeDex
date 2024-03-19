@@ -25,7 +25,7 @@ const Details = () => {
         <div className="details-container">
           <img
             className="details-img"
-            src={pokemon?.sprites.other.home.front_default}
+            src={pokemon?.sprites.other["official-artwork"].front_default}
             alt=""
           />
         </div>

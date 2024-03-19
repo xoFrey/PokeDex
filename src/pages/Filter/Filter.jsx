@@ -56,6 +56,7 @@ const Filter = () => {
         {typeData ? (
           typeData.results.map((item, index) => (
             <button
+              className="type-btn"
               key={index}
               onClick={() => {
                 setTypeURL(item.url);
