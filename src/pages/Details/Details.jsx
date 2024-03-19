@@ -26,29 +26,38 @@ const Details = () => {
           <img
             className="details-img"
             src={pokemon?.sprites.other.home.front_default}
-            alt=""
+            alt={`img of ${pokemon?.name}`}
           />
         </div>
         <div>
-          <p className="titel">
-            #{pokemon?.id} {pokemon?.name}
-          </p>
+          <h2 className="details-titel">
+            #
+            {pokemon?.id < 10
+              ? "00" + pokemon?.id
+              : pokemon?.id < 100 && pokemon?.id > 9
+              ? "0" + pokemon?.id
+              : pokemon?.id}{" "}
+            {pokemon?.name}
+          </h2>
         </div>
         <div className="details-type">
           {pokemon?.types.map((item, index) => (
             <p
               key={index}
-              className="btn-werte"
+              className="types"
               style={{ backgroundColor: colors[item.type.name] }}
             >
               {item.type.name}
             </p>
           ))}
         </div>
-        <p className="movements">ATTACKS AND MOVEMENTS</p>
+
+        <h2>ATTACKS</h2>
         <div className="details-attacks">
           {pokemon?.moves?.slice(0, attacks).map((item, index) => (
-            <p key={index}>{item.move.name}</p>
+            <p className="btn" key={index}>
+              {item.move.name}
+            </p>
           ))}
         </div>
       </section>
