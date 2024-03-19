@@ -48,10 +48,12 @@ const Filter = () => {
 
   return (
     <section className="filter">
-      <Back />
-      <h2>Type</h2>
+      <div className="filter-heading">
+        <Back className="back-arrow" />
+        <h2>Type</h2>
+      </div>
 
-      <div>
+      <div className="filter-container">
         {typeData ? (
           typeData.results.map((item, index) => (
             <button
@@ -69,7 +71,11 @@ const Filter = () => {
           <p>Loading</p>
         )}
       </div>
-      <Link to="/">Search</Link>
+      <div className="filter-container">
+        <Link to="/" className="btn">
+          Search
+        </Link>
+      </div>
     </section>
   );
 };
