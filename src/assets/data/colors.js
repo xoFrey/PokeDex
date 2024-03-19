@@ -11,7 +11,7 @@ export const colors = {
   electric: "#ffe600",
   dark: "#1c1c1c",
   poison: "#ab00ae",
-  flying: "#ccdadd",
+  flying: "#8EB0B8",
   psychic: "#ff81f2",
   normal: "#b3b3b3",
   ground: "#965a00",

@@ -12,10 +12,11 @@
   text-align: center;
 }
 
-.filter div {
+.filter-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 30px;
 }
 
 .filter button {
@@ -27,8 +28,4 @@
   border: 1px solid black;
   text-transform: uppercase;
   color: white;
-}
-
-.filter a {
-  text-decoration: none;
 }
