@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { DarkMode } from "../Context/Context";
 
 const Darkmode = () => {
-  const [switcher, setSwitcher] = useState("dnede");
+  const [switcher, setSwitcher] = useState(false);
+  const { darkMode, setDarkMode } = useContext(DarkMode);
 
-  if (switcher === false) {
+  if (darkMode === false) {
     document.documentElement.style.setProperty("--cardbgfirst", "#ffe1c6");
     document.documentElement.style.setProperty("--cardbgsecond", "#ffcb05");
     document.documentElement.style.setProperty("--fullbg", "#ccdadd");
@@ -16,12 +18,11 @@ const Darkmode = () => {
     document.documentElement.style.setProperty("--input", "#919191");
     document.documentElement.style.setProperty("--placeholder", "white");
   }
-  console.log(switcher);
 
   return (
     <>
       <svg
-        onClick={() => setSwitcher((switcher) => !switcher)}
+        onClick={() => setDarkMode((darkMode) => !darkMode)}
         width="25"
         height="25"
         viewBox="0 0 25 25"

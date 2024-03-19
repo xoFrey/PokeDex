@@ -11,6 +11,7 @@ import {
   UserInput,
   ButtonState,
   PokeFilter,
+  DarkMode,
 } from "./component/Context/Context";
 
 function App() {
@@ -18,29 +19,32 @@ function App() {
   const [userInput, setUserInput] = useState("");
   const [button, setButton] = useState(false);
   const [pokeFilter, setPokeFilter] = useState("");
+  const [darkMode, setDarkMode] = useState(false);
 
   return (
     <>
-      <PokeFilter.Provider value={{ pokeFilter, setPokeFilter }}>
-        <ButtonState.Provider value={{ button, setButton }}>
-          <UserInput.Provider value={{ userInput, setUserInput }}>
-            <LoadingContent.Provider value={{ loading, setLoading }}>
-              {loading ? (
-                <BrowserRouter>
-                  <Headline />
-                  <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/filter" element={<Filter />} />
-                    <Route path="/details/:id" element={<Details />} />
-                  </Routes>
-                </BrowserRouter>
-              ) : (
-                <LoadingPage />
-              )}
-            </LoadingContent.Provider>
-          </UserInput.Provider>
-        </ButtonState.Provider>
-      </PokeFilter.Provider>
+      <DarkMode.Provider value={{ darkMode, setDarkMode }}>
+        <PokeFilter.Provider value={{ pokeFilter, setPokeFilter }}>
+          <ButtonState.Provider value={{ button, setButton }}>
+            <UserInput.Provider value={{ userInput, setUserInput }}>
+              <LoadingContent.Provider value={{ loading, setLoading }}>
+                {loading ? (
+                  <BrowserRouter>
+                    <Headline />
+                    <Routes>
+                      <Route path="/" element={<Home />} />
+                      <Route path="/filter" element={<Filter />} />
+                      <Route path="/details/:id" element={<Details />} />
+                    </Routes>
+                  </BrowserRouter>
+                ) : (
+                  <LoadingPage />
+                )}
+              </LoadingContent.Provider>
+            </UserInput.Provider>
+          </ButtonState.Provider>
+        </PokeFilter.Provider>
+      </DarkMode.Provider>
     </>
   );
 }
