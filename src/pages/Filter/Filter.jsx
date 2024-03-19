@@ -66,6 +66,7 @@ const Filter = () => {
           <p>Loading</p>
         )}
       </div>
+      <Link to="/">Search</Link>
     </section>
   );
 };
