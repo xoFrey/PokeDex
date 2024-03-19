@@ -1,6 +1,7 @@
 .filter {
   padding-bottom: 50px;
 }
+
 .filter h2 {
   font-family: RobotoBold;
   text-transform: uppercase;
@@ -24,5 +25,5 @@
   border-radius: 5px;
   border: 1px solid black;
   text-transform: uppercase;
-  /* color: white; */
+  color: white;
 }

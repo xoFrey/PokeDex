@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
 import "./Filter.css";
 import FilterData from "../../component/FilterData/FilterData";
+import { colors } from "../../assets/data/colors";
 
 const Filter = () => {
-  // Variable für die gefetchten Types:
+  // State für die Daten aller gefetchten Types:
   const [typeData, setTypeData] = useState();
 
-  // Variable für den angeklickten Type:
-  const [type, setType] = useState("normal");
+  // State für URL des angeklickten Types - deren Daten werden in einem weiteren State gefetcht und gespeichert:
+  const [typeURL, setTypeURL] = useState("");
 
-  // Fetch aller Typen:
+  // State für die Daten des einzelnen Typs, die mit typeURL gefetcht werden:
+  const [type, setType] = useState("");
+
+  // Fetch aller Types:
   useEffect(() => {
     fetch("https://pokeapi.co/api/v2/type/")
       .then((res) => res.json())
@@ -19,38 +23,48 @@ const Filter = () => {
   // console.log(typeData);
   // console.log(typeData.results[0].name);
 
-  // ! Filter
-  // alle Pokemons eines Typs: "https://pokeapi.co/api/v2/type/1/"
-  // statt 1 dann value des geklickten buttons mitgeben?
-  // dort dann navigieren zu .pokemon --> map --> pokemon.name
-
-  // Funktion, um value des geklickten Buttons zu kriegen:
-  const getType = (e) => {
-    setType(e.target.value);
-  };
-  // console.log(type);
-  // type als prop weitergeben an FilterData-Komponente und dort
-  // fetchen mit type? https://pokeapi.co/api/v2/type/${type}
+  // Fetch der Daten des einzelnen, angeklickten types:
+  useEffect(() => {
+    if (typeURL != "") {
+      fetch(typeURL)
+        .then((res) => res.json())
+        .then((singleData) => setType(singleData));
+    }
+  }, [typeURL]);
+  console.log(typeURL);
+  console.log(type);
 
   return (
     <section className="filter">
       <h2>Type</h2>
+
       <div>
         {typeData ? (
           typeData.results.map((item, index) => (
             <button
               key={index}
-              className={item.name}
-              value={item.name}
-              onClick={getType}
+              // value={item.name}
+              // onClick={getType}
+              onClick={() => setTypeURL(item.url)}
+              style={{ backgroundColor: colors[item.name] }}
             >
               {item.name}
             </button>
+            // # --> Ist "Unknown" ein Type oder ein Fehler? Gibt es unknown Pokemon?
           ))
         ) : (
           <p>Loading</p>
         )}
+
         <FilterData type={type} />
+
+        {/* //- stattdessen über type mappen und nicht die type-URL weitergeben, sondern die type.pokemon[].pokemon.url weitergeben an FilterData und dort die Details rendern
+        //-- oder nicht an FilterData, sondern direkt an RenderPokemon weitergeben und Izels Suche nutzen?? */}
+        {/* {type?.pokemon?.map((item, index) => (
+        <div>
+          <RenderPokemon url={item.url} />
+        </div>
+      ))} */}
       </div>
     </section>
   );
