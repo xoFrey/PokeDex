@@ -11,14 +11,16 @@ const Details = () => {
       <div className="details-container">
         <img
           className="details-img"
-          src={pokemon.sprites.other.dream_world.front_default}
+          src={pokemon.sprites.other.home.front_default}
           alt=""
         />
       </div>
       <div>
-        <p className="titel">{pokemon.name}</p>
+        <p className="titel">
+          #{pokemon.id} {pokemon.name}
+        </p>
       </div>
-      <div>
+      <div className="details-type">
         {pokemon.types.map((item, index) => (
           <p key={index} className="btn-werte">
             {item.type.name}
@@ -26,7 +28,7 @@ const Details = () => {
         ))}
       </div>
       <div>
-        <h3>{}</h3>
+        <p className="movements">ATTACKS AND MOVEMENTS</p>
       </div>
     </section>
   );

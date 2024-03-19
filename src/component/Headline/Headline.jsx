@@ -1,8 +1,8 @@
 import "./Headline.css";
 const Headline = () => {
   return (
-    <section>
-      <h2>Headline</h2>
+    <section className="logo-img">
+      <img src="/Images/PokemonLogo.png" alt="" />
     </section>
   );
 };
