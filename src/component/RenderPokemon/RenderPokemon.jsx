@@ -1,6 +1,5 @@
 import { useState, useEffect, useContext } from "react";
 import "./RenderPokemon.css";
-import { PokeData } from "../Context/Context";
 
 const RenderPokemon = ({ url }) => {
   const [pokemonData, setPokemonData] = useState();

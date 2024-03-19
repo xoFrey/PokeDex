@@ -1,0 +1,22 @@
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.search input {
+  border-radius: 50px;
+  background-color: #ebebeb;
+  border-style: none;
+  padding: 10px 10vw;
+}
+.search input::placeholder {
+  color: #909090;
+  font-family: roboto;
+}
+
+.search input:focus {
+  outline: none;
+}

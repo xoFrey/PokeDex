@@ -14,6 +14,10 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: var(--flying);
+}
+
 img {
   max-width: 100%;
 }

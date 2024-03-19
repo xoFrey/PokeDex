@@ -1,26 +1,38 @@
 import { useContext, useEffect, useState } from "react";
 import "./Home.css";
-import { PokeData } from "../../component/Context/Context";
 import RenderPokemon from "../../component/RenderPokemon/RenderPokemon";
+import Search from "../../component/Search/Search";
+import { UserInput } from "../../component/Context/Context";
 const Home = () => {
-  const { pokemon, setPokemon } = useContext(PokeData);
   const [pokemonList, setPokemonList] = useState();
+  const { userInput, setUserInput } = useContext(UserInput);
+  console.log(userInput);
   // ?offset=0&limit=1025
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1025")
+    fetch("https://pokeapi.co/api/v2/pokemon/")
       .then((res) => res.json())
       .then((data) => setPokemonList(data))
       .catch((err) => console.log("Pokemon List Fetch", err));
   }, []);
 
+  // fitness app marzio. alle fetchen aber nicht alle rendern
+
   return (
-    <section className="home">
-      {pokemonList?.results.map((item, index) => (
-        <div key={index}>
-          <RenderPokemon url={item.url} />
-        </div>
-      ))}
-    </section>
+    <>
+      <Search />
+      <section className="home">
+        {userInput.length > 0 ? (
+          <p>gefilterte</p>
+        ) : (
+          pokemonList?.results.map((item, index) => (
+            <div key={index}>
+              <RenderPokemon url={item.url} />
+            </div>
+          ))
+        )}
+        {}
+      </section>
+    </>
   );
 };
 
