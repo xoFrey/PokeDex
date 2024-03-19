@@ -27,19 +27,17 @@ const Home = () => {
 
   return (
     <>
-      <Search />
+      <Search pokeList={pokemonList} />
       <section className="home">
-        {button ? (
-          pokeFilter.map((item) => <RenderPokemon url={item} />)
-        ) : userInput.length > 0 ? (
-          <p>rendered</p>
-        ) : (
-          pokemonList?.results.map((item, index) => (
-            <div key={index}>
-              <RenderPokemon url={item.url} />
-            </div>
-          ))
-        )}
+        {button
+          ? pokeFilter.map((item) => <RenderPokemon url={item} />)
+          : userInput.length > 0
+          ? pokeFilter.map((item) => <RenderPokemon url={item.url} />)
+          : pokemonList?.results.map((item, index) => (
+              <div key={index}>
+                <RenderPokemon url={item.url} />
+              </div>
+            ))}
         {}
       </section>
     </>

@@ -19,7 +19,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [userInput, setUserInput] = useState("");
   const [button, setButton] = useState(false);
-  const [pokeFilter, setPokeFilter] = useState("hallo");
+  const [pokeFilter, setPokeFilter] = useState("");
 
   return (
     <>

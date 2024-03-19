@@ -1,11 +1,19 @@
 import Burgermenu from "../Svg/Burgermenu";
 import Darkmode from "../Svg/Darkmode";
 import "./Search.css";
-import { useContext } from "react";
-import { UserInput } from "../../component/Context/Context";
-const Search = () => {
+import { useContext, useEffect } from "react";
+import { PokeFilter, UserInput } from "../../component/Context/Context";
+const Search = ({ pokeList }) => {
   const { userInput, setUserInput } = useContext(UserInput);
+  const { pokeFilter, setPokeFilter } = useContext(PokeFilter);
 
+  useEffect(() => {
+    const filtered = pokeList?.results?.filter((item) =>
+      item.name.includes(userInput)
+    );
+    setPokeFilter(filtered);
+  }, [userInput]);
+  console.log(pokeFilter);
   return (
     <section className="search">
       <Burgermenu />
