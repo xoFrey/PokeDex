@@ -13,6 +13,7 @@ import {
   PokeFilter,
   DarkMode,
 } from "./component/Context/Context";
+import BackToTop from "./component/BackToTop/BackToTop";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -31,6 +32,7 @@ function App() {
                 {loading ? (
                   <BrowserRouter>
                     <Headline />
+                    <BackToTop />
                     <Routes>
                       <Route path="/" element={<Home />} />
                       <Route path="/filter" element={<Filter />} />

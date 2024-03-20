@@ -7,6 +7,7 @@ import {
   PokeFilter,
   UserInput,
 } from "../../component/Context/Context";
+import BackToTop from "../../component/BackToTop/BackToTop";
 const Home = () => {
   const [pokemonList, setPokemonList] = useState();
   const { userInput, setUserInput } = useContext(UserInput);

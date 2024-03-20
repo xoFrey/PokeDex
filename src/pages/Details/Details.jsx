@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { colors } from "../../assets/data/colors";
 
 import { useParams } from "react-router-dom";
+import BackToTop from "../../component/BackToTop/BackToTop";
 
 const Details = () => {
   const [pokemon, setPokemon] = useState();

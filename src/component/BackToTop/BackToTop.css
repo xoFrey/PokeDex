@@ -1,0 +1,7 @@
+.to-top {
+  transform: rotateZ(90deg);
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+  z-index: 3;
+}

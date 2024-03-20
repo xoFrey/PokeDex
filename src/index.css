@@ -16,6 +16,7 @@
 
 html {
   background-color: var(--fullbg);
+  scroll-behavior: smooth;
 }
 
 img {
