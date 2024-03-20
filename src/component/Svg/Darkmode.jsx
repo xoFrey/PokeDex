@@ -23,6 +23,7 @@ const Darkmode = () => {
     <>
       <svg
         onClick={() => setDarkMode((darkMode) => !darkMode)}
+        className="dark-mode-btn"
         width="25"
         height="25"
         viewBox="0 0 25 25"

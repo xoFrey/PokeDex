@@ -46,3 +46,7 @@ a {
   font-family: RobotoBold;
   cursor: pointer;
 }
+
+.dark-mode-btn {
+  cursor: pointer;
+}
