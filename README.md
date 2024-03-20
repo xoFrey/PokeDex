@@ -27,6 +27,7 @@
 </ul>
 
 <h2><samp>Live site</samp></h2>
+<li><samp>Live Page: <a href="https://poke-dex-livid-two.vercel.app"></samp></li>
 
 <h2><samp>Screenshot</samp></h2>
 
