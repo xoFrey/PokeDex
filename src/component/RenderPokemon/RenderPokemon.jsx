@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./RenderPokemon.css";
 import { Link } from "react-router-dom";
+import LoadingPage from "../../pages/LoadingPage/LoadingPage";
 
 const RenderPokemon = ({ url }) => {
   const [pokemonData, setPokemonData] = useState();
@@ -34,7 +35,7 @@ const RenderPokemon = ({ url }) => {
             </div>
           </div>
         ) : (
-          <p>loading....</p>
+          <LoadingPage />
         )}
       </Link>
     </section>

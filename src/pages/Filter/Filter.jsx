@@ -3,6 +3,7 @@ import "./Filter.css";
 import { colors } from "../../assets/data/colors";
 import { Link } from "react-router-dom";
 import { ButtonState, PokeFilter } from "../../component/Context/Context";
+import LoadingPage from "../../pages/LoadingPage/LoadingPage";
 
 const Filter = () => {
   const { button, setButton } = useContext(ButtonState);
@@ -73,7 +74,7 @@ const Filter = () => {
             </div>
           ))
         ) : (
-          <p>Loading</p>
+          <LoadingPage />
         )}
       </div>
       <div className="filter-container">

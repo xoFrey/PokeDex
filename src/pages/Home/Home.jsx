@@ -13,7 +13,7 @@ const Home = () => {
   const { pokeFilter } = useContext(PokeFilter);
   const { button, setButton } = useContext(ButtonState);
   const [filteredPoke, setFilteredPoke] = useState();
-  const [loadItems, setLoadItems] = useState(150);
+  const [loadItems, setLoadItems] = useState(151);
 
   useEffect(() => {
     setFilteredPoke(pokeFilter);
