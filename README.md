@@ -35,8 +35,9 @@
 <img src="./src/assets/img/HomeLight.png"/> <img src="./src/assets/img/HomeDark.png"/> 
 </p>
 <p align="center">
-<img src="./src/assets/img/TypesLight.png"/> <img src="./src/assets/img/TypesDark.png"/> 
+<img src="./src/assets/img/DetailLight.png"/> <img src="./src/assets/img/DetailDark.png"/> 
 </p>
 <p align="center">
-<img src="./src/assets/img/DetailsLight.png"/> <img src="./src/assets/img/DetailsDark.png"/> 
+<img src="./src/assets/img/TypesLight.png"/> <img src="./src/assets/img/TypesDark.png"/> 
 </p>
+
