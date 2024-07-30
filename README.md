@@ -32,6 +32,11 @@
 <h2><samp>Screenshot</samp></h2>
 
 <p align="center">
-<img width="500" height="300" src="./public/img/Mainpagedesk.png"/> <img width="500"  height="300"  src="./public/img/DetailDesktop.png"/> 
+<img src="./src/assets/img/HomeLight.png"/> <img src="./src/assets/img/HomeDark.png"/> 
 </p>
-<p align="center"><img width="300" src="./public/img/Mainpagemobile.png"/> <img width="300" src="./public/img/Detailmobile.png"/></p>
+<p align="center">
+<img src="./src/assets/img/TypesLight.png"/> <img src="./src/assets/img/TypesDark.png"/> 
+</p>
+<p align="center">
+<img src="./src/assets/img/DetailsLight.png"/> <img src="./src/assets/img/DetailsDark.png"/> 
+</p>
