@@ -8,7 +8,7 @@ export const colors = {
   rock: "#e1b237",
   water: "#00a0e4",
   ghost: "#5a1e64",
-  electric: "#ffe600",
+  electric: "#e6d00b",
   dark: "#1c1c1c",
   poison: "#ab00ae",
   flying: "#8EB0B8",
@@ -19,4 +19,5 @@ export const colors = {
   dragon: "#00458a",
   grass: "#57921c",
   shadow: "#7d7b7b",
+  stellar: "#b5b5b5",
 };
