@@ -5,7 +5,6 @@
   <a href="https://www.linkedin.com/in/izel-acar-0572332ba/" target="_blank"> <img width="40" align="center" src="./src/assets/img/icons8-linkedin-64.png"/></a>
 </p>
 
-
 <h3><samp>Contributors:</samp></h3>
 <ul>
 <a href="https://github.com/xoFrey"><li><samp>Izel Acar</samp></li></a>
